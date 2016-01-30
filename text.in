@@ -1,0 +1,68 @@
+Converting decimal to binary in Java
+
+up vote
+6
+down vote
+favorite
+2
+I'm trying to write a code that converts a number to binary, and this is what I wrote. It gives me couple of errors in Eclipse, which I don't understand. What's wrong with that? Any other suggestions? I'd like to learn and hear for any comments for fixing it. Thank you.
+
+public class NumberConverte {
+  public static void main(String[] args) {
+    int i = Integer.parseInt(args);
+    public static void Binary(int int1){
+      System.out.println(int1 + "in binary is");
+      do {
+        System.out.println(i mod 2);
+      } while (int1>0);
+    }
+  }
+}
+The error messages:
+
+The method parseInt(String) in the type Integer is not applicable for the arguments (String[])
+Multiple markers at this line
+Syntax error on token "(", ; expected
+Syntax error on token ")", ; expected
+void is an invalid type for the variable Binary
+Multiple markers at this line
+Syntax error on token "mod", invalid AssignmentOperator
+7 Answers
+activeoldestvotes
+up vote
+12
+down vote
+accepted
+Integer.toBinaryString(int) should do the trick !
+
+And by the way, correct your syntax, if you're using Eclipse I'm sure he's complaining about a lot of error.
+
+Working code :
+
+public class NumberConverter {
+   public static void main(String[] args) {
+       int i = Integer.parseInt(args[0]);
+       toBinary(i);
+   }
+
+   public static void toBinary(int int1){
+       System.out.println(int1 + " in binary is");
+       System.out.println(Integer.toBinaryString(int1));
+   }
+}
+shareimprove this answer
+edited Mar 5 '11 at 14:25
+
+Luke Woodward
+27.8k74465	
+answered Mar 5 '11 at 13:08
+
+krtek
+17.5k33366
+1	 	
+Although that's not much help for learning to program in Java! – Chimoo Mar 5 '11 at 13:13
+  	 	
+Another question. How do I get an input from a user? I probably should add something to the main function, Am I? – Unknown user Mar 5 '11 at 14:43
+  	 	
+have a look at devdaily.com/java/edu/pj/pj010005 – krtek Mar 5 '11 at 15:47
+add a comment
